@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html>
+<head><title>QBO Auth Callback</title></head> 
+<body style="font-family:monospace;padding:40px;background:#1a1a1a;color:#00ff88"> 
+<h2>Authorization Successful</h2> 
+<p>Copy these values into your terminal:</p>
+<div id="out" style="background:#000;padding:20px;border-radius:8px;font-size:1.2em"></div> 
+<script> 
+const p = new URLSearchParams(window.location.search); 
+const code = p.get('code') || 'not found'; 
+const realm = p.get('realmId') || 'not found'; 
+document.getElementById('out').innerHTML = 
+'<b>code:</b> ' + code + '<br><br><b>realmId:</b> ' + realm; 
+</script> 
+</body> 
+</html>
